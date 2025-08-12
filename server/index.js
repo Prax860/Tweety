@@ -5,11 +5,11 @@ import { createPost } from "./mcp.tool.js";
 import { z } from "zod";
 
 const server = new McpServer({
-    name: "example-server",
+    name: "serverr",
     version: "1.0.0"
 });
 
-// ... set up server resources, tools, and prompts ...
+
 
 const app = express();
 
@@ -43,9 +43,6 @@ server.tool(
     return createPost(status);
 })
 
-
-// to support multiple simultaneous connections we have a lookup object from
-// sessionId to transport
 const transports = {};
 
 app.get("/sse", async (req, res) => {
